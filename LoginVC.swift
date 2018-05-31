@@ -113,8 +113,11 @@ class LoginVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-
-
+    
+    @IBAction func registerButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: TO_CREATE_ACCOUNT, sender: self)
+    }
+    
 }
 
 
