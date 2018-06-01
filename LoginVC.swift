@@ -18,7 +18,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var emailLabel: UITextField!
     @IBOutlet weak var passwordLabel: UITextField!
-    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var loginBtn: RoundedButton!
     @IBOutlet weak var registerBtn: UIButton!
     
     let separetorEmailView : UIView = {

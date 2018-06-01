@@ -10,6 +10,13 @@ import UIKit
 
 class RegisterVC: UIViewController {
 
+    //IBOutlets
+    @IBOutlet weak var usernameTxt: UITextField!
+    @IBOutlet weak var emailTxt: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
+    @IBOutlet weak var userImage: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,4 +26,22 @@ class RegisterVC: UIViewController {
         performSegue(withIdentifier: UNWIND, sender: nil)
     }
 
+    @IBAction func chooseAvatarPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func generateBGPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func createAccountPressed(_ sender: RoundedButton) {
+        guard let email = emailTxt.text, emailTxt.text != "" else {return}
+        guard let pass = passwordTxt.text, passwordTxt.text != "" else {return}
+        
+        AuthService.instance.registerUser(with: email, password: pass) { (success) in
+            
+            if success {
+                print("Registered User")
+            }
+        }
+    }
+    
 }
