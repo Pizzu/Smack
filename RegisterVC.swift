@@ -39,7 +39,11 @@ class RegisterVC: UIViewController {
         AuthService.instance.registerUser(with: email, password: pass) { (success) in
             
             if success {
-                print("Registered User")
+                AuthService.instance.loginUser(with: email, password: pass, completion: { (success) in
+                    if success {
+                        print("Logged In User", AuthService.instance.authToken)
+                    }
+                })
             }
         }
     }
