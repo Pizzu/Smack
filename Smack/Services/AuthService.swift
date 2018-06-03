@@ -102,12 +102,7 @@ class AuthService {
             "avatarColor": avatarColor
         ]
         
-        let header = [
-            "Authorization": "Bearer \(AuthService.instance.authToken)",
-            "Content-Type": "application/json; charset=utf-8"
-        ]
-        
-        Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+        Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             if response.result.isSuccess {
                 let json : JSON = JSON(response.result.value!)
                 let id = json["_id"].stringValue
@@ -127,12 +122,8 @@ class AuthService {
     }
     
     func findUseryByEmail(completion: @escaping CompletionHandler) {
-        let header = [
-            "Authorization": "Bearer \(AuthService.instance.authToken)",
-            "Content-Type": "application/json; charset=utf-8"
-        ]
         
-        Alamofire.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+        Alamofire.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             if response.result.isSuccess {
                 let json : JSON = JSON(response.result.value!)
                 let id = json["_id"].stringValue
