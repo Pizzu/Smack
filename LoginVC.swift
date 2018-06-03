@@ -20,6 +20,9 @@ class LoginVC: UIViewController {
     @IBOutlet weak var passwordLabel: UITextField!
     @IBOutlet weak var loginBtn: RoundedButton!
     @IBOutlet weak var registerBtn: UIButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    
     
     let separetorEmailView : UIView = {
         let view = UIView()
@@ -106,11 +109,43 @@ class LoginVC: UIViewController {
         registerBtn.widthAnchor.constraint(equalTo: loginBtn.widthAnchor).isActive = true
         registerBtn.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
+        spinner.isHidden = true
+        emailLabel.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedStringKey.foregroundColor : smackPurplePlaceHolder])
+        passwordLabel.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedStringKey.foregroundColor : smackPurplePlaceHolder])
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tap)
+    }
+    
+    
+    @objc func handleTap() {
+        view.endEditing(true)
     }
     
 
     @IBAction func closeButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func loginBtnPressed(_ sender: RoundedButton) {
+        spinner.isHidden = false
+        spinner.startAnimating()
+        guard let email = emailLabel.text, emailLabel.text != "" else {return}
+        guard let pass = passwordLabel.text, passwordLabel.text != "" else {return}
+        
+        AuthService.instance.loginUser(with: email, password: pass) { (success) in
+            if success {
+                AuthService.instance.findUseryByEmail(completion: { (success) in
+                    if success {
+                        self.spinner.stopAnimating()
+                        self.spinner.isHidden = true
+                        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                })
+            }
+        }
     }
     
     

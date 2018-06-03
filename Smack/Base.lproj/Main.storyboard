@@ -210,6 +210,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="ZAY-lY-WnZ" eventType="touchUpInside" id="6Lz-eO-Ty4"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0rk-NQ-BOU">
                                 <rect key="frame" x="62" y="176" width="250" height="30"/>
@@ -254,8 +257,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8eg-uA-OKm">
+                                <rect key="frame" x="169" y="215.5" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8eg-uA-OKm" firstAttribute="centerX" secondItem="H9Y-Wd-T1R" secondAttribute="centerX" id="8mo-mT-QU4"/>
+                            <constraint firstItem="8eg-uA-OKm" firstAttribute="centerY" secondItem="H9Y-Wd-T1R" secondAttribute="centerY" constant="-100" id="hNQ-er-BbK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Sjf-NI-ugP"/>
                     </view>
                     <connections>
@@ -267,6 +278,7 @@
                         <outlet property="logoTitleLabel" destination="9CI-be-a3U" id="uMZ-u8-oQX"/>
                         <outlet property="passwordLabel" destination="cW6-kk-2Jc" id="tO0-ur-8ap"/>
                         <outlet property="registerBtn" destination="pVQ-kk-dJY" id="wxG-aF-obY"/>
+                        <outlet property="spinner" destination="8eg-uA-OKm" id="UgJ-Ub-abs"/>
                         <segue destination="lYp-nr-sjC" kind="show" identifier="toRegisterAccount" id="70q-Pt-V49"/>
                     </connections>
                 </viewController>
