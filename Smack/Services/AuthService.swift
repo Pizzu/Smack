@@ -82,6 +82,7 @@ class AuthService {
                 let json : JSON = JSON(response.result.value!)
                 self.userEmail = json["user"].stringValue
                 self.authToken = json["token"].stringValue
+                self.isLoggedIn = true
                 completion(true)
             } else {
                 completion(false)
