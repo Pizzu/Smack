@@ -23,8 +23,8 @@ class AddChannelVC: UIViewController {
     }
     
     func setupView() {
-        nameTxt.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [NSAttributedStringKey.foregroundColor : smackPurplePlaceHolder])
-        descriptionTxt.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedStringKey.foregroundColor : smackPurplePlaceHolder])
+        nameTxt.attributedPlaceholder = NSAttributedString(string: "Name", attributes: [NSAttributedStringKey.foregroundColor : smackPurplePlaceHolder])
+        descriptionTxt.attributedPlaceholder = NSAttributedString(string: "Description", attributes: [NSAttributedStringKey.foregroundColor : smackPurplePlaceHolder])
         
         bgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
         
@@ -39,6 +39,18 @@ class AddChannelVC: UIViewController {
     }
     
     @IBAction func createChannelPressed(_ sender: RoundedButton) {
+        guard let channelName = nameTxt.text, nameTxt.text != "" else {return}
+        guard let channelDescription = descriptionTxt.text else {return}
+        
+        SocketService.instance.addChannel(channelName: channelName, channelDescription: channelDescription) { (success) in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        
     }
     
 }
+
+
+

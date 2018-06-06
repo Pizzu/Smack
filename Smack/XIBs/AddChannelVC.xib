@@ -90,7 +90,7 @@
                                 <constraint firstAttribute="height" constant="50" id="m2Y-Le-6Sr"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                            <state key="normal" title="Create Button">
+                            <state key="normal" title="Create Channel">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -116,7 +116,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uFs-iX-MMB" secondAttribute="trailing" constant="20" id="9cm-xy-pS6"/>
                 <constraint firstItem="VUs-JW-pTf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="IpH-pL-GRG"/>
-                <constraint firstItem="VUs-JW-pTf" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="M9n-LR-iln"/>
+                <constraint firstAttribute="bottom" secondItem="VUs-JW-pTf" secondAttribute="bottom" id="aOz-gY-RAr"/>
                 <constraint firstItem="VUs-JW-pTf" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="bRH-rC-YVv"/>
                 <constraint firstItem="uFs-iX-MMB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fFF-EH-9OI"/>
                 <constraint firstItem="VUs-JW-pTf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="u4B-yE-qYx"/>

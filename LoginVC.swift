@@ -59,13 +59,13 @@ class LoginVC: UIViewController {
         
         //iOS 9 constraints
     
-        closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 28).isActive = true
+        closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -28).isActive = true
+        closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 45).isActive = true
         closeButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
         closeButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         containerLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        containerLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
+        containerLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
         containerLogo.widthAnchor.constraint(equalToConstant: 122.5).isActive = true
         containerLogo.heightAnchor.constraint(equalTo: logoImageView.heightAnchor).isActive = true
         

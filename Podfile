@@ -8,6 +8,6 @@ target 'Smack' do
   # Pods for Smack
     pod 'Alamofire'
     pod 'SwiftyJSON'
-    pod 'Socket.IO-Client-Swift'
+    pod 'Socket.IO-Client-Swift', '~> 13.2.0'
 
 end
