@@ -20,6 +20,8 @@
 		7F9608B220BDADD200B0AF26 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9608B120BDADD200B0AF26 /* ChatVC.swift */; };
 		7F9608B420BDADE400B0AF26 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9608B320BDADE400B0AF26 /* ChannelVC.swift */; };
 		7FA8576320C7EE60002C1269 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA8576220C7EE60002C1269 /* Message.swift */; };
+		7FA8576520C86929002C1269 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA8576420C86929002C1269 /* KeyboardBoundView.swift */; };
+		7FA8576720C86FF1002C1269 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA8576620C86FF1002C1269 /* MessageCell.swift */; };
 		7FB6954720C47A1F001EEB2B /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6954620C47A1F001EEB2B /* MessageService.swift */; };
 		7FB6954920C47BC2001EEB2B /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB6954820C47BC2001EEB2B /* Channel.swift */; };
 		7FCC27F220C06D0400963CB9 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC27F120C06D0400963CB9 /* RegisterVC.swift */; };
@@ -56,6 +58,8 @@
 		7F9608B120BDADD200B0AF26 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		7F9608B320BDADE400B0AF26 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		7FA8576220C7EE60002C1269 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		7FA8576420C86929002C1269 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
+		7FA8576620C86FF1002C1269 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		7FB6954620C47A1F001EEB2B /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		7FB6954820C47BC2001EEB2B /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		7FCC27F120C06D0400963CB9 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 				7FEB3FBF20C32AA900AEDB91 /* AvatarCell.swift */,
 				7FEB3FC120C423EC00AEDB91 /* CircleImage.swift */,
 				7F60B4B620C54460001CF361 /* ChannelCell.swift */,
+				7FA8576420C86929002C1269 /* KeyboardBoundView.swift */,
+				7FA8576620C86FF1002C1269 /* MessageCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -349,11 +355,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FA8576520C86929002C1269 /* KeyboardBoundView.swift in Sources */,
 				7F60B4BD20C58EFA001CF361 /* SocketService.swift in Sources */,
 				7FEB3FC520C44A3800AEDB91 /* ProfileVC.swift in Sources */,
 				7F60B4B720C54460001CF361 /* ChannelCell.swift in Sources */,
 				7F9608B220BDADD200B0AF26 /* ChatVC.swift in Sources */,
 				7FEB3FBE20C326C800AEDB91 /* AvatarVC.swift in Sources */,
+				7FA8576720C86FF1002C1269 /* MessageCell.swift in Sources */,
 				7FEB3FB620C1B54000AEDB91 /* RoundedButton.swift in Sources */,
 				7FA8576320C7EE60002C1269 /* Message.swift in Sources */,
 				7FB6954920C47BC2001EEB2B /* Channel.swift in Sources */,
