@@ -35,12 +35,12 @@ class SocketService: NSObject {
     //e una per sapere quando il sever risponde con il channel aggiunto
     
     func addChannel(channelName: String, channelDescription: String, completion: @escaping CompletionHandler) {
-        manager.defaultSocket.emit("newChannel", channelName,channelDescription)
+        socket.emit("newChannel", channelName,channelDescription)
         completion(true)
     }
     
     func getChannel(completion: @escaping CompletionHandler) {
-        manager.defaultSocket.on("channelCreated") { (dataArray, ack) in
+        socket.on("channelCreated") { (dataArray, ack) in
             guard let channelName = dataArray[0] as? String else {return}
             guard let channelDescription = dataArray[1] as? String else {return}
             guard let channelId = dataArray[2] as? String else {return}
@@ -53,12 +53,12 @@ class SocketService: NSObject {
     
     func addMessage(messageBody: String, userId: String, channelId: String, completion: @escaping CompletionHandler) {
         let user = UserDataService.instance
-        manager.defaultSocket.emit("newMessage", messageBody,userId,channelId, user.name, user.avatarName, user.avatarColor)
+        socket.emit("newMessage", messageBody,userId,channelId, user.name, user.avatarName, user.avatarColor)
         completion(true)
     }
     
     func getMessage(completion: @escaping (_ newMessage: Message) -> Void) {
-        manager.defaultSocket.on("messageCreated") { (dataArray, ack) in
+        socket.on("messageCreated") { (dataArray, ack) in
             guard let messageBody = dataArray[0] as? String else {return}
             //guard let userId = dataArray[1] as? String else {return}
             guard let channelId = dataArray[2] as? String else {return}
@@ -74,7 +74,7 @@ class SocketService: NSObject {
     }
     
     func getTypingUsers(_ completionHandler: @escaping (_ typingUsers:[String:String]) -> Void) {
-        manager.defaultSocket.on("userTypingUpdate") { (dataArray, ask) in
+        socket.on("userTypingUpdate") { (dataArray, ask) in
             guard let typingUsers = dataArray[0] as? [String : String] else {return}
             completionHandler(typingUsers)
         }

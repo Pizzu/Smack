@@ -140,11 +140,11 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if messageTextBox.text == "" {
             isTyping = false
             sendButton.isHidden = true
-            SocketService.instance.manager.defaultSocket.emit("stopType", UserDataService.instance.name, channelId)
+            SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channelId)
         } else {
             if isTyping == false {
                 sendButton.isHidden = false
-                SocketService.instance.manager.defaultSocket.emit("startType", UserDataService.instance.name, channelId)
+                SocketService.instance.socket.emit("startType", UserDataService.instance.name, channelId)
             }
             isTyping = true
         }
@@ -159,7 +159,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 if success {
                     self.messageTextBox.text = ""
                     self.messageTextBox.resignFirstResponder()
-                    SocketService.instance.manager.defaultSocket.emit("stopType", UserDataService.instance.name, channelId)
+                    SocketService.instance.socket.emit("stopType", UserDataService.instance.name, channelId)
                 }
             }
         }
